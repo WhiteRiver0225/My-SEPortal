@@ -1,0 +1,111 @@
+<!DOCTYPE html>
+<html lang="ja">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>MY SE PORTAL</title>
+  <link rel="stylesheet" href="css/style.css">
+</head>
+<body>
+<header class="topbar">
+  <div class="brand">MY SE PORTAL</div>
+  <div class="top-actions">
+    <button id="themeBtn" class="icon-btn" title="ダークモード">🌙</button>
+  </div>
+</header>
+
+<main class="container">
+<section class="hero">
+  <div>
+    <p class="eyebrow">PERSONAL KNOWLEDGE BASE</p>
+     <h1><span class="terminal-icon">▸</span>現役SEのSEによるSEのための技術ポータル</h1>
+    <p class="hero-text">
+      経験で学んだ技術を常にインプットし、あとからいつでも探せるナレッジデータベース。
+    </p>
+   </div>
+</section>
+
+  <nav class="tabs">
+    <button class="tab active" data-tab="home">🏠 HOME</button>
+    <button class="tab" data-tab="input">📥 技術インプット</button>
+  </nav>
+
+  <section id="home" class="tab-panel active">
+  <div class="section-head">
+    <div>
+    <h2>技術カテゴリ</h2>
+    <p>追加された技術は、カテゴリ別に蓄積されます。</p>
+    </div>
+
+    <div class="search-wrap">
+      <span>🔎</span>
+      <input id="globalSearch" type="search" placeholder="技術名・内容・メモを検索">
+    </div>
+   </div>
+
+    <div id="searchResults" class="search-results hidden"></div>
+    <div id="categoryGrid" class="category-grid"></div>
+  </section>
+
+  <section id="input" class="tab-panel">
+    <div class="section-head">
+      <div>
+        <h2>技術インプット</h2>
+        <p>新しく追加した技術を登録すると、HOMEの技術カテゴリへ自動で蓄積されます。</p>
+      </div>
+    </div>
+
+    <form id="techForm" class="form-card">
+      <div class="form-grid">
+        <label>
+          技術名
+          <input id="name" required placeholder="例：PowerShellでファイル操作">
+        </label>
+
+        <label>
+          技術カテゴリ
+          <select id="category" required></select>
+        </label>
+
+        <label class="full">
+          知ったきっかけ
+          <input id="reason" placeholder="例：現場でログ取得を自動化する必要があった">
+        </label>
+
+        <label class="full">
+          何ができる技術？
+          <textarea id="what" rows="4" placeholder="この技術で何ができるのか"></textarea>
+        </label>
+
+        <label class="full">
+          参考URL
+          <input id="url" type="url" placeholder="https://...">
+        </label>
+
+        <label class="full">
+          内容詳細
+          <textarea id="memo" rows="5" placeholder="コーディング、学んだこと、使い方、注意点など"></textarea>
+        </label>
+      </div>
+
+      <button class="primary-btn" type="submit">＋ 技術を登録</button>
+    </form>
+
+    <div class="input-note">
+      <strong>登録後の流れ</strong>
+      <span>技術インプット → HOMEのカテゴリに蓄積 → カテゴリを開く → インプット一覧 → 詳細確認</span>
+    </div>
+  </section>
+</main>
+
+<div id="modal" class="modal hidden">
+  <div class="modal-backdrop"></div>
+  <div class="modal-card">
+    <button id="modalClose" class="modal-close">×</button>
+    <div id="modalContent"></div>
+  </div>
+</div>
+
+<script src="js/main.js"></script>
+</body>
+</html>
